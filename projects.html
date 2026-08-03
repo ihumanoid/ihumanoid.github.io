@@ -1,9 +1,10 @@
 ---
 layout: default
-title: Research Projects
+title: Projects
+permalink: /projects/
 ---
-<h1 style="text-align:center; margin: 10px 0 20px; color:#333;">Research Projects</h1>
-<p class="projects-intro">Published papers and ongoing work from the GAIAR Lab, organized by theme. Click any project for details.</p>
+<h1 style="text-align:center; margin: 10px 0 20px; color:#333;">Projects</h1>
+<p class="projects-intro">Published papers and ongoing work from the GAIAR Lab, led with the students driving each project, organized by theme. Click any project for details.</p>
 
 {% for theme in site.project_themes %}
   {% assign items = site.projects | where: "theme", theme | sort: "order" %}
