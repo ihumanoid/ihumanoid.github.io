@@ -1,0 +1,44 @@
+---
+layout: default
+---
+{% assign theme_image = page.image %}
+{% if theme_image == nil %}
+  {% case page.theme %}
+    {% when "AI & Financial Markets" %}
+      {% assign theme_image = "/images/projects/theme-fintech.svg" %}
+    {% when "Fairness & Trustworthy AI" %}
+      {% assign theme_image = "/images/projects/theme-fairness.svg" %}
+    {% when "Consumer Behavior & Text Analytics" %}
+      {% assign theme_image = "/images/projects/theme-consumer.svg" %}
+    {% when "LLM Systems & Applications" %}
+      {% assign theme_image = "/images/projects/theme-nlp.svg" %}
+  {% endcase %}
+{% endif %}
+
+<article class="project-detail">
+  <a class="back-link" href="{{ site.baseurl }}/projects/">&larr; All Projects</a>
+
+  <span class="status-badge {{ page.status }}">{{ page.status | replace: '-', ' ' }}</span>
+  <div class="theme-tag">{{ page.theme }}</div>
+  <h1>{{ page.title }}</h1>
+  <p class="project-meta">
+    {{ page.authors }}<br>
+    {{ page.venue }}{% if page.year %} &middot; {{ page.year }}{% endif %}
+  </p>
+
+  {% if theme_image %}
+    <img class="project-banner" src="{{ theme_image | prepend: site.baseurl }}" alt="{{ page.theme }} illustration">
+  {% endif %}
+
+  <div class="project-body">
+    {{ content }}
+  </div>
+
+  {% if page.link %}
+    <p><a class="project-link-btn" href="{{ page.link }}" target="_blank" rel="noopener">{% if page.status == "published" %}View Publication{% else %}View Source{% endif %} &rarr;</a></p>
+  {% endif %}
+
+  {% if page.extra_link %}
+    <p><a class="project-link-btn" href="{{ page.extra_link }}" target="_blank" rel="noopener" style="background:#4a4a4a !important;">{{ page.extra_link_label | default: "Related work" }} &rarr;</a></p>
+  {% endif %}
+</article>

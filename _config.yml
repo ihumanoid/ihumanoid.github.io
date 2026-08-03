@@ -15,6 +15,24 @@ author:
   linkedin_username: ''
   github_username: ihumanoid
 
+project_themes:
+  - AI & Financial Markets
+  - Fairness & Trustworthy AI
+  - Consumer Behavior & Text Analytics
+  - LLM Systems & Applications
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
 # Build settings
 destination: _site
 markdown: kramdown
