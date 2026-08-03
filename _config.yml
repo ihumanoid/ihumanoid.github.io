@@ -1,0 +1,34 @@
+# Site settings
+title: "Prof. Garg's AI and Analytics (GAIAR) Lab"
+headline: "Prof. Garg - Building AI things!"
+description: 'Research and ad hoc projects from the GAIAR Lab, exploring how AI reshapes analytics, decision-making, and the tools we build with.'
+url: 'https://ihumanoid.github.io'
+baseurl: ''
+profilepic: '/images/profile.jpg'
+bkimage: '/images/bk1.jpg'
+# google_analytics: UA-XXXXXX-X
+
+author:
+  name: 'Prof. Garg'
+  email: ''
+  twitter_username: ''
+  linkedin_username: ''
+  github_username: ihumanoid
+
+# Build settings
+destination: _site
+markdown: kramdown
+highlighter: rouge
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+#plugins: ['jekyll-paginate']
+exclude: ['README.md', 'screenshot-overview.png']
